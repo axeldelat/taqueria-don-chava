@@ -27,9 +27,9 @@ export default function Home() {
           </div>
 
           <div className={styles.card}>
-            <h2>Suc. Centro &rarr;</h2>
-            <p>Gonzalo Guerrero Mz 38 Lt 1 Avenida 25 esquina con avenida 28, Gonzalo Guerrero, 77710 Q.R.</p>
-            <a href="https://goo.gl/maps/FMxY4yRW4gFQ8bqt7" target="_blank" rel="noopener noreferrer"><button className={styles.btn}>Cómo Llegar</button></a>
+            <h2>Suc. CTM &rarr;</h2>
+            <p>Entre avenida 115 y avenida 125, Frente a Nuevo H. Ayuntamiento,<br /> 77711 Q.R.</p>
+            <a href="https://goo.gl/maps/zVaBLqMwWZbaJjHt8" target="_blank" rel="noopener noreferrer"><button className={styles.btn}>Cómo Llegar</button></a>
             <a href="https://www.taqueriadonchavacentro.com/" target="_blank" rel="noopener noreferrer"><button className={styles.btn}>Ordena en Línea</button></a>
           </div>
         </div>
