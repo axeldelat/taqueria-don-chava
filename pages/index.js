@@ -30,7 +30,7 @@ export default function Home() {
             <h2>Suc. CTM &rarr;</h2>
             <p>Entre avenida 115 y avenida 125, Frente a Nuevo H. Ayuntamiento,<br /> 77711 Q.R.</p>
             <a href="https://goo.gl/maps/zVaBLqMwWZbaJjHt8" target="_blank" rel="noopener noreferrer"><button className={styles.btn}>Cómo Llegar</button></a>
-            <a href="https://www.taqueriadonchavacentro.com/" target="_blank" rel="noopener noreferrer"><button className={styles.btn}>Ordena en Línea</button></a>
+            <a href="https://www.taqueriadonchavactm.com/" target="_blank" rel="noopener noreferrer"><button className={styles.btn}>Ordena en Línea</button></a>
           </div>
         </div>
       </main>
