@@ -2,8 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['axt.s3.amazonaws.com'],
-  }
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'axt.s3.amazonaws.com',
+        pathname: '/donchava/**',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig

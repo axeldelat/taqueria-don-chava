@@ -1,17 +1,7 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: white;
-}
+@import "tailwindcss";
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+@theme {
+  --color-brand-red: #e50f1c;
+  --color-brand-orange: #df733c;
+  --color-card-border: #fe5858;
 }
