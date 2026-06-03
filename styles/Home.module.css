@@ -102,8 +102,16 @@
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.logo img {
+  display: block;
+  width: auto;
+  height: 1.25em;
 }
 
 .btn {
