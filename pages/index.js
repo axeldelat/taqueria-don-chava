@@ -43,7 +43,7 @@ export default function Home() {
         >
           Powered by{' '}
           <span className={styles.logo}>
-            <Image src="https://axt.s3.amazonaws.com/donchava/markerante.svg" alt="Vercel Logo" height={40} width={144} />
+            <Image src="/markerante.svg" alt="Markerante" height={40} width={40} />
           </span>
         </a>
       </footer>
