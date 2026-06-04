@@ -38,10 +38,10 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="flex flex-wrap items-stretch justify-center gap-6 sm:flex-col md:flex-row">
+          <div className="flex w-full flex-col gap-6 sm:flex-row">
 
             {/* Sucursal 28 de julio */}
-            <div className="flex max-w-[420px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg text-left text-[#CE122E]">
+            <div className="flex flex-1 min-w-[280px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg text-left text-[#CE122E]">
               <div className="relative w-[160px] shrink-0">
                 <Image
                   src="/28dejulio.png"
@@ -84,7 +84,7 @@ export default function Home() {
             </div>
 
             {/* Sucursal CTM */}
-            <div className="flex max-w-[420px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg text-left text-[#CE122E]">
+            <div className="flex flex-1 min-w-[280px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg text-left text-[#CE122E]">
               <div className="relative w-[160px] shrink-0">
                 <Image
                   src="/ctm.png"
