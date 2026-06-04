@@ -51,7 +51,22 @@ export default function Home() {
             </div>
             <div className="flex flex-col justify-center p-4">
               <h2 className="mb-2 text-xl font-semibold">{'Suc. 28 de julio \u2192'}</h2>
-              <p className="text-sm leading-relaxed">Av. 28 de Julio, Blvd. de Las Americas esq, Mundo Habitat, 77714 Playa del Carmen, Q.R.</p>
+              <div className="mt-1 grid grid-cols-2 gap-x-3 gap-y-0.5 text-xs text-gray-700">
+                {[
+                  ['Miércoles', '4:30 p.m.–12 a.m.'],
+                  ['Jueves',    '4:30 p.m.–12 a.m.'],
+                  ['Viernes',   '4:30 p.m.–12 a.m.'],
+                  ['Sábado',    '4:30 p.m.–12 a.m.'],
+                  ['Domingo',   'Cerrado'],
+                  ['Lunes',     '4:30 p.m.–12 a.m.'],
+                  ['Martes',    '4:30 p.m.–12 a.m.'],
+                ].map(([day, hours]) => (
+                  <>
+                    <span key={day} className="font-medium text-[#CE122E]">{day}</span>
+                    <span key={hours} className={hours === 'Cerrado' ? 'text-gray-400 italic' : ''}>{hours}</span>
+                  </>
+                ))}
+              </div>
               <a href="https://goo.gl/maps/mGrrjE38A9BR8otB7" target="_blank" rel="noopener noreferrer">
                 <button className="mt-3 w-full cursor-pointer rounded border-none bg-[#df733c] px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">Como Llegar</button>
               </a>
@@ -73,7 +88,22 @@ export default function Home() {
             </div>
             <div className="flex flex-col justify-center p-4">
               <h2 className="mb-2 text-xl font-semibold">{'Suc. CTM \u2192'}</h2>
-              <p className="text-sm leading-relaxed">Entre avenida 115 y avenida 125, Frente a Nuevo H. Ayuntamiento, 77711 Q.R.</p>
+              <div className="mt-1 grid grid-cols-2 gap-x-3 gap-y-0.5 text-xs text-gray-700">
+                {[
+                  ['Miércoles', '4:30 p.m.–12 a.m.'],
+                  ['Jueves',    '4:30 p.m.–12 a.m.'],
+                  ['Viernes',   '4:30 p.m.–12 a.m.'],
+                  ['Sábado',    '4:30 p.m.–12 a.m.'],
+                  ['Domingo',   'Cerrado'],
+                  ['Lunes',     '4:30 p.m.–12 a.m.'],
+                  ['Martes',    '4:30 p.m.–12 a.m.'],
+                ].map(([day, hours]) => (
+                  <>
+                    <span key={day} className="font-medium text-[#CE122E]">{day}</span>
+                    <span key={hours} className={hours === 'Cerrado' ? 'text-gray-400 italic' : ''}>{hours}</span>
+                  </>
+                ))}
+              </div>
               <a href="https://goo.gl/maps/zVaBLqMwWZbaJjHt8" target="_blank" rel="noopener noreferrer">
                 <button className="mt-3 w-full cursor-pointer rounded border-none bg-[#df733c] px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">Como Llegar</button>
               </a>
