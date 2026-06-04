@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <div
-      className="p-0"
+      className="p-0 min-h-[100svh]"
       style={{
         backgroundImage: "url('https://axt.s3.amazonaws.com/donchava/bg.jpg')",
         backgroundSize: 'cover',
@@ -17,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="https://axt.s3.amazonaws.com/donchava/favicon.ico" />
       </Head>
 
-      <main className="flex min-h-[90vh] flex-1 flex-col items-center justify-center bg-black/50 px-0 py-16">
+      <main className="flex min-h-[100svh] flex-1 flex-col items-center justify-center bg-black/50 px-0 py-16">
         <Image
           src="https://axt.s3.amazonaws.com/donchava/logo.png"
           alt="Don Chava"
