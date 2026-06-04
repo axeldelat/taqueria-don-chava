@@ -23,7 +23,7 @@ export default function Home() {
         />
 
         {/* Banner + Cards aligned wrapper */}
-        <div className="w-full max-w-[900px] px-4">
+        <div className="w-full max-w-[900px] px-4 mb-8 sm:mb-12">
 
           {/* Promo Banner */}
           <div className="mb-6 flex w-full flex-col items-center justify-center gap-4 rounded-lg bg-[#CE122E] px-6 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
