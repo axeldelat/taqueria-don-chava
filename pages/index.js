@@ -38,83 +38,83 @@ export default function Home() {
             </button>
           </div>
 
-        <div className="flex flex-wrap items-stretch justify-center gap-6 sm:flex-col md:flex-row">
-          {/* Sucursal 28 de julio */}
-          <div className="flex max-w-[420px] overflow-hidden rounded-[10px] border border-[#CE122E] bg-white/95 text-left text-[#CE122E] transition-colors duration-150 ease-in hover:text-[#a50f26]">
-            <div className="relative w-[160px] shrink-0">
-              <Image
-                src="/28dejulio.png"
-                alt="Sucursal 28 de julio"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-col justify-center p-4">
-              <h2 className="mb-2 text-xl font-semibold">{'Suc. 28 de julio \u2192'}</h2>
-              <p className="mt-1 text-xs leading-relaxed text-gray-700">
-                <span className="font-medium text-[#CE122E]">Lunes a Sábado:</span><br />
-                4:30 p.m.–12 a.m.<br />
-                <span className="font-medium text-[#CE122E]">Domingo:</span> <span className="italic text-gray-400">Cerrado</span>
-              </p>
-              <a href="https://goo.gl/maps/mGrrjE38A9BR8otB7" target="_blank" rel="noopener noreferrer" className="mt-3 block w-full">
-                <button className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-[#CE122E] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E] active:opacity-80">Como Llegar</button>
-              </a>
-              <div className="relative mt-2 w-full">
-                <span
-                  id="glf-28dejulio"
-                  className="glf-button"
-                  data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211"
-                  data-glf-ruid="e0f208ff-19d2-4e53-bb58-7688eeb8e79b"
-                  style={{ position: 'absolute', opacity: 0, pointerEvents: 'none', width: 0, height: 0, overflow: 'hidden' }}
+          <div className="flex flex-wrap items-stretch justify-center gap-6 sm:flex-col md:flex-row">
+            {/* Sucursal 28 de julio */}
+            <div className="flex max-w-[420px] overflow-hidden rounded-[10px] border border-[#CE122E] bg-white/95 text-left text-[#CE122E] transition-colors duration-150 ease-in hover:text-[#a50f26]">
+              <div className="relative w-[160px] shrink-0">
+                <Image
+                  src="/28dejulio.png"
+                  alt="Sucursal 28 de julio"
+                  fill
+                  className="object-cover"
                 />
-                <button
-                  onClick={() => document.getElementById('glf-28dejulio')?.click()}
-                  className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-transparent px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#CE122E] transition-colors hover:bg-[#CE122E] hover:text-white active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#CE122E] focus-visible:outline-offset-2"
-                >
-                  Ordenar en Línea
-                </button>
+              </div>
+              <div className="flex flex-col justify-center p-4">
+                <h2 className="mb-2 text-xl font-semibold">{'Suc. 28 de julio \u2192'}</h2>
+                <p className="mt-1 text-xs leading-relaxed text-gray-700">
+                  <span className="font-medium text-[#CE122E]">Lunes a Sábado:</span><br />
+                  4:30 p.m.–12 a.m.<br />
+                  <span className="font-medium text-[#CE122E]">Domingo:</span> <span className="italic text-gray-400">Cerrado</span>
+                </p>
+                <a href="https://goo.gl/maps/mGrrjE38A9BR8otB7" target="_blank" rel="noopener noreferrer" className="mt-3 block w-full">
+                  <button className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-[#CE122E] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E] active:opacity-80">Cómo Llegar</button>
+                </a>
+                <div className="relative mt-2 w-full">
+                  <span
+                    id="glf-28dejulio"
+                    className="glf-button"
+                    data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211"
+                    data-glf-ruid="e0f208ff-19d2-4e53-bb58-7688eeb8e79b"
+                    style={{ position: 'absolute', opacity: 0, pointerEvents: 'none', width: 0, height: 0, overflow: 'hidden' }}
+                  />
+                  <button
+                    onClick={() => document.getElementById('glf-28dejulio')?.click()}
+                    className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-transparent px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#CE122E] transition-colors hover:bg-[#CE122E] hover:text-white active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#CE122E] focus-visible:outline-offset-2"
+                  >
+                    Ordenar en Línea
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Sucursal CTM */}
-          <div className="flex max-w-[420px] overflow-hidden rounded-[10px] border border-[#CE122E] bg-white/95 text-left text-[#CE122E] transition-colors duration-150 ease-in hover:text-[#a50f26]">
-            <div className="relative w-[160px] shrink-0">
-              <Image
-                src="/ctm.png"
-                alt="Sucursal CTM"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-col justify-center p-4">
-              <h2 className="mb-2 text-xl font-semibold">{'Suc. CTM \u2192'}</h2>
-              <p className="mt-1 text-xs leading-relaxed text-gray-700">
-                <span className="font-medium text-[#CE122E]">Lunes a Sábado:</span><br />
-                4:30 p.m.–12 a.m.<br />
-                <span className="font-medium text-[#CE122E]">Domingo:</span> <span className="italic text-gray-400">Cerrado</span>
-              </p>
-              <a href="https://goo.gl/maps/zVaBLqMwWZbaJjHt8" target="_blank" rel="noopener noreferrer" className="mt-3 block w-full">
-                <button className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-[#CE122E] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E] active:opacity-80">Como Llegar</button>
-              </a>
-              <div className="relative mt-2 w-full">
-                <span
-                  id="glf-ctm"
-                  className="glf-button"
-                  data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211"
-                  data-glf-ruid="944964cf-3ba2-48aa-96b8-03488b380f74"
-                  style={{ position: 'absolute', opacity: 0, pointerEvents: 'none', width: 0, height: 0, overflow: 'hidden' }}
+            {/* Sucursal CTM */}
+            <div className="flex max-w-[420px] overflow-hidden rounded-[10px] border border-[#CE122E] bg-white/95 text-left text-[#CE122E] transition-colors duration-150 ease-in hover:text-[#a50f26]">
+              <div className="relative w-[160px] shrink-0">
+                <Image
+                  src="/ctm.png"
+                  alt="Sucursal CTM"
+                  fill
+                  className="object-cover"
                 />
-                <button
-                  onClick={() => document.getElementById('glf-ctm')?.click()}
-                  className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-transparent px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#CE122E] transition-colors hover:bg-[#CE122E] hover:text-white active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#CE122E] focus-visible:outline-offset-2"
-                >
-                  Ordenar en Línea
-                </button>
+              </div>
+              <div className="flex flex-col justify-center p-4">
+                <h2 className="mb-2 text-xl font-semibold">{'Suc. CTM \u2192'}</h2>
+                <p className="mt-1 text-xs leading-relaxed text-gray-700">
+                  <span className="font-medium text-[#CE122E]">Lunes a Sábado:</span><br />
+                  4:30 p.m.–12 a.m.<br />
+                  <span className="font-medium text-[#CE122E]">Domingo:</span> <span className="italic text-gray-400">Cerrado</span>
+                </p>
+                <a href="https://goo.gl/maps/zVaBLqMwWZbaJjHt8" target="_blank" rel="noopener noreferrer" className="mt-3 block w-full">
+                  <button className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-[#CE122E] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E] active:opacity-80">Cómo Llegar</button>
+                </a>
+                <div className="relative mt-2 w-full">
+                  <span
+                    id="glf-ctm"
+                    className="glf-button"
+                    data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211"
+                    data-glf-ruid="944964cf-3ba2-48aa-96b8-03488b380f74"
+                    style={{ position: 'absolute', opacity: 0, pointerEvents: 'none', width: 0, height: 0, overflow: 'hidden' }}
+                  />
+                  <button
+                    onClick={() => document.getElementById('glf-ctm')?.click()}
+                    className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-transparent px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#CE122E] transition-colors hover:bg-[#CE122E] hover:text-white active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#CE122E] focus-visible:outline-offset-2"
+                  >
+                    Ordenar en Línea
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
       </main>
 
