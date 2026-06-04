@@ -52,7 +52,7 @@ export default function Home() {
             <div className="flex flex-col justify-center p-4">
               <h2 className="mb-2 text-xl font-semibold">{'Suc. 28 de julio \u2192'}</h2>
               <p className="mt-1 text-xs leading-relaxed text-gray-700">
-                <span className="font-medium text-[#CE122E]">Lunes a Sabado:</span><br />
+                <span className="font-medium text-[#CE122E]">Lunes a Sábado:</span><br />
                 4:30 p.m.–12 a.m.<br />
                 <span className="font-medium text-[#CE122E]">Domingo:</span> <span className="italic text-gray-400">Cerrado</span>
               </p>
@@ -60,7 +60,7 @@ export default function Home() {
                 <button className="mt-3 w-full cursor-pointer rounded border-none bg-[#df733c] px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">Como Llegar</button>
               </a>
               <div className="mt-2 w-full">
-                <span className="glf-button" data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211" data-glf-ruid="e0f208ff-19d2-4e53-bb58-7688eeb8e79b" >Ver el MENÚ y ORDENAR</span>
+                <span className="glf-button" data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211" data-glf-ruid="e0f208ff-19d2-4e53-bb58-7688eeb8e79b" >Ordenar en Línea</span>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function Home() {
             <div className="flex flex-col justify-center p-4">
               <h2 className="mb-2 text-xl font-semibold">{'Suc. CTM \u2192'}</h2>
               <p className="mt-1 text-xs leading-relaxed text-gray-700">
-                <span className="font-medium text-[#CE122E]">Lunes a Sabado:</span><br />
+                <span className="font-medium text-[#CE122E]">Lunes a Sábado:</span><br />
                 4:30 p.m.–12 a.m.<br />
                 <span className="font-medium text-[#CE122E]">Domingo:</span> <span className="italic text-gray-400">Cerrado</span>
               </p>
@@ -86,7 +86,7 @@ export default function Home() {
                 <button className="mt-3 w-full cursor-pointer rounded border-none bg-[#df733c] px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">Como Llegar</button>
               </a>
               <div className="mt-2 w-full">
-                <span className="glf-button" data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211" data-glf-ruid="944964cf-3ba2-48aa-96b8-03488b380f74" >Ver el MENÚ y ORDENAR</span>
+                <span className="glf-button" data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211" data-glf-ruid="944964cf-3ba2-48aa-96b8-03488b380f74" >Ordenar en Línea</span>
               </div>
             </div>
           </div>
