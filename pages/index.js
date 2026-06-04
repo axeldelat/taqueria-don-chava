@@ -54,7 +54,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="flex flex-1 items-center justify-center border-t border-[#eaeaea] bg-white px-0 py-8 text-[#e50f1c]">
+      <footer className="flex flex-1 items-center justify-center border-t border-[#eaeaea] bg-[rgb(28,24,22)] px-0 py-8 text-white">
         <a
           href="https://www.markerante.com/"
           target="_blank"
