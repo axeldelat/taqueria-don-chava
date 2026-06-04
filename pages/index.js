@@ -94,6 +94,8 @@ export default function Home() {
                   src="/ctm.png"
                   alt="Sucursal CTM"
                   fill
+                  sizes="160px"
+                  quality={75}
                   className="object-cover"
                 />
               </div>
@@ -148,6 +150,7 @@ export default function Home() {
               alt="Markerante"
               height={40}
               width={40}
+              loading="lazy"
               className="block h-[1.25em] w-auto"
             />
           </span>
@@ -195,6 +198,7 @@ export default function Home() {
               alt="Toma captura de esta imagen y preséntalo en cualquiera de nuestras sucursales para obtener una cortesía"
               width={600}
               height={480}
+              quality={80}
               className="block h-auto w-full"
             />
           </div>
