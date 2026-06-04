@@ -86,7 +86,7 @@ export default function Home() {
                 <button className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-[#CE122E] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E] active:opacity-80">Como Llegar</button>
               </a>
               <div className="mt-2 w-full">
-                <span className="glf-button" data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211" data-glf-ruid="944964cf-3ba2-48aa-96b8-03488b380f74">Ordenar en Línea</span>
+                <span className="" data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211" data-glf-ruid="944964cf-3ba2-48aa-96b8-03488b380f74">Ordenar en Línea</span>
               </div>
             </div>
           </div>
