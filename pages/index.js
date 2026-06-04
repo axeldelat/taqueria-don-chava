@@ -21,20 +21,23 @@ export default function Home() {
           width={200}
         />
 
-        {/* Promo Banner */}
-        <div className="my-6 flex w-full max-w-[900px] flex-col items-center justify-center gap-4 rounded-lg bg-[#CE122E] px-6 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
-          <p className="text-lg font-semibold text-white sm:text-xl">
-            Recibe una cortesía sorpresa en tu proxima visita
-          </p>
-          <button
-            onClick={() => setShowPromo(true)}
-            className="shrink-0 cursor-pointer rounded-full border-2 border-white bg-transparent px-6 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E]"
-          >
-            Obtener Promo
-          </button>
-        </div>
+        {/* Banner + Cards aligned wrapper */}
+        <div className="w-full max-w-[900px] px-4">
 
-        <div className="flex flex-wrap items-stretch justify-center max-w-[900px] gap-6 px-4 sm:flex-col md:flex-row">
+          {/* Promo Banner */}
+          <div className="mb-6 flex w-full flex-col items-center justify-center gap-4 rounded-lg bg-[#CE122E] px-6 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
+            <p className="text-lg font-semibold text-white sm:text-xl">
+              Recibe una cortesía sorpresa en tu proxima visita
+            </p>
+            <button
+              onClick={() => setShowPromo(true)}
+              className="shrink-0 cursor-pointer rounded-full border-2 border-white bg-transparent px-6 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E]"
+            >
+              Obtener Promo
+            </button>
+          </div>
+
+        <div className="flex flex-wrap items-stretch justify-center gap-6 sm:flex-col md:flex-row">
           {/* Sucursal 28 de julio */}
           <div className="flex max-w-[420px] overflow-hidden rounded-[10px] border border-[#CE122E] bg-white/95 text-left text-[#CE122E] transition-colors duration-150 ease-in hover:text-[#a50f26]">
             <div className="relative w-[160px] shrink-0">
@@ -78,6 +81,7 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </div>
         </div>
       </main>
 
