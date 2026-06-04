@@ -56,11 +56,11 @@ export default function Home() {
                 4:30 p.m.–12 a.m.<br />
                 <span className="font-medium text-[#CE122E]">Domingo:</span> <span className="italic text-gray-400">Cerrado</span>
               </p>
-              <a href="https://goo.gl/maps/mGrrjE38A9BR8otB7" target="_blank" rel="noopener noreferrer">
-                <button className="mt-3 w-full cursor-pointer rounded border-none bg-[#df733c] px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">Como Llegar</button>
+              <a href="https://goo.gl/maps/mGrrjE38A9BR8otB7" target="_blank" rel="noopener noreferrer" className="mt-3 block w-full">
+                <button className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-[#CE122E] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E] active:opacity-80">Como Llegar</button>
               </a>
-              <div className="mt-2 w-full">
-                <span className="glf-button" data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211" data-glf-ruid="e0f208ff-19d2-4e53-bb58-7688eeb8e79b" >Ordenar en Línea</span>
+              <div className="mt-2 w-full [&_.glf-button]:block [&_.glf-button]:w-full [&_.glf-button]:cursor-pointer [&_.glf-button]:rounded-full [&_.glf-button]:border-2 [&_.glf-button]:border-[#CE122E] [&_.glf-button]:bg-transparent [&_.glf-button]:px-4 [&_.glf-button]:py-2 [&_.glf-button]:text-center [&_.glf-button]:text-xs [&_.glf-button]:font-bold [&_.glf-button]:uppercase [&_.glf-button]:tracking-wider [&_.glf-button]:text-[#CE122E] [&_.glf-button]:transition-colors hover:[&_.glf-button]:bg-[#CE122E] hover:[&_.glf-button]:text-white">
+                <span className="glf-button" data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211" data-glf-ruid="e0f208ff-19d2-4e53-bb58-7688eeb8e79b">Ordenar en Línea</span>
               </div>
             </div>
           </div>
@@ -82,11 +82,11 @@ export default function Home() {
                 4:30 p.m.–12 a.m.<br />
                 <span className="font-medium text-[#CE122E]">Domingo:</span> <span className="italic text-gray-400">Cerrado</span>
               </p>
-              <a href="https://goo.gl/maps/zVaBLqMwWZbaJjHt8" target="_blank" rel="noopener noreferrer">
-                <button className="mt-3 w-full cursor-pointer rounded border-none bg-[#df733c] px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">Como Llegar</button>
+              <a href="https://goo.gl/maps/zVaBLqMwWZbaJjHt8" target="_blank" rel="noopener noreferrer" className="mt-3 block w-full">
+                <button className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-[#CE122E] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E] active:opacity-80">Como Llegar</button>
               </a>
-              <div className="mt-2 w-full">
-                <span className="glf-button" data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211" data-glf-ruid="944964cf-3ba2-48aa-96b8-03488b380f74" >Ordenar en Línea</span>
+              <div className="mt-2 w-full [&_.glf-button]:block [&_.glf-button]:w-full [&_.glf-button]:cursor-pointer [&_.glf-button]:rounded-full [&_.glf-button]:border-2 [&_.glf-button]:border-[#CE122E] [&_.glf-button]:bg-transparent [&_.glf-button]:px-4 [&_.glf-button]:py-2 [&_.glf-button]:text-center [&_.glf-button]:text-xs [&_.glf-button]:font-bold [&_.glf-button]:uppercase [&_.glf-button]:tracking-wider [&_.glf-button]:text-[#CE122E] [&_.glf-button]:transition-colors hover:[&_.glf-button]:bg-[#CE122E] hover:[&_.glf-button]:text-white">
+                <span className="glf-button" data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211" data-glf-ruid="944964cf-3ba2-48aa-96b8-03488b380f74">Ordenar en Línea</span>
               </div>
             </div>
           </div>
