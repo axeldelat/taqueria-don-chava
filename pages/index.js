@@ -14,7 +14,7 @@ export default function Home() {
         <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
       </Head>
 
-      <main className="flex min-h-[100svh] flex-1 flex-col items-center justify-center px-0 py-16">
+      <main className="flex min-h-[100svh] flex-1 flex-col items-center justify-center px-0 py-0">
         <Image
           src="/logo-donchava.png"
           alt="Don Chava"
