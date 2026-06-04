@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Home() {
+  const [showPromo, setShowPromo] = useState(false)
+
   return (
     <div className="p-0 min-h-[100svh] bg-[#fafafa]">
       <Head>
@@ -18,13 +21,22 @@ export default function Home() {
           width={200}
         />
 
-        <p className="my-4 text-center text-2xl leading-relaxed text-[rgb(196,24,20)]">
-          Selecciona una sucursal
-        </p>
+        {/* Promo Banner */}
+        <div className="my-6 flex w-full max-w-[900px] flex-col items-center justify-center gap-4 rounded-lg bg-[#CE122E] px-6 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
+          <p className="text-lg font-semibold text-white sm:text-xl">
+            Recibe una cortesía sorpresa en tu proxima visita
+          </p>
+          <button
+            onClick={() => setShowPromo(true)}
+            className="shrink-0 cursor-pointer rounded-full border-2 border-white bg-transparent px-6 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E]"
+          >
+            Obtener Promo
+          </button>
+        </div>
 
         <div className="flex flex-wrap items-stretch justify-center max-w-[900px] gap-6 px-4 sm:flex-col md:flex-row">
           {/* Sucursal 28 de julio */}
-          <div className="flex max-w-[420px] overflow-hidden rounded-[10px] border border-[#fe5858] bg-white/95 text-left text-[rgb(196,24,20)] transition-colors duration-150 ease-in hover:text-[rgb(164,20,18)]">
+          <div className="flex max-w-[420px] overflow-hidden rounded-[10px] border border-[#CE122E] bg-white/95 text-left text-[#CE122E] transition-colors duration-150 ease-in hover:text-[#a50f26]">
             <div className="relative w-[160px] shrink-0">
               <Image
                 src="/28dejulio.png"
@@ -46,7 +58,7 @@ export default function Home() {
           </div>
 
           {/* Sucursal CTM */}
-          <div className="flex max-w-[420px] overflow-hidden rounded-[10px] border border-[#fe5858] bg-white/95 text-left text-[rgb(196,24,20)] transition-colors duration-150 ease-in hover:text-[rgb(164,20,18)]">
+          <div className="flex max-w-[420px] overflow-hidden rounded-[10px] border border-[#CE122E] bg-white/95 text-left text-[#CE122E] transition-colors duration-150 ease-in hover:text-[#a50f26]">
             <div className="relative w-[160px] shrink-0">
               <Image
                 src="/ctm.png"
@@ -88,6 +100,34 @@ export default function Home() {
           </span>
         </a>
       </footer>
+
+      {/* Promo Modal */}
+      {showPromo && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={() => setShowPromo(false)}
+        >
+          <div
+            className="relative max-h-[90vh] max-w-[600px] overflow-hidden rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowPromo(false)}
+              className="absolute right-2 top-2 z-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-black/50 text-xl font-bold text-white hover:bg-black/70"
+              aria-label="Cerrar"
+            >
+              &times;
+            </button>
+            <Image
+              src="/promo-cortesia.png"
+              alt="Toma captura de esta imagen y preséntalo en cualquiera de nuestras sucursales para obtener una cortesía"
+              width={600}
+              height={480}
+              className="block h-auto w-full"
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
