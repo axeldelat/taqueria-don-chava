@@ -1,7 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-red: #e50f1c;
+  --color-brand-red: #CE122E;
   --color-brand-orange: #df733c;
-  --color-card-border: #fe5858;
+  --color-card-border: #CE122E;
+}
+
+/* Override GLF embedder script styles on .glf-button */
+.glf-button {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  border-radius: 9999px !important;
+  border: 2px solid #CE122E !important;
+  background-color: transparent !important;
+  padding: 0.5rem 1rem !important;
+  text-align: center !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #CE122E !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+  font-family: inherit !important;
+  line-height: 1.5 !important;
+  text-decoration: none !important;
+}
+
+.glf-button:hover {
+  background-color: #CE122E !important;
+  color: #ffffff !important;
+}
+
+.glf-button:active {
+  opacity: 0.8 !important;
+}
+
+.glf-button:focus-visible {
+  outline: 2px solid #CE122E !important;
+  outline-offset: 2px !important;
 }
