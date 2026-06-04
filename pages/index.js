@@ -20,6 +20,8 @@ export default function Home() {
           alt="Don Chava"
           height={200}
           width={200}
+          priority
+          quality={85}
         />
 
         {/* Banner + Cards aligned wrapper */}
@@ -47,6 +49,8 @@ export default function Home() {
                   src="/28dejulio.png"
                   alt="Sucursal 28 de julio"
                   fill
+                  sizes="160px"
+                  quality={75}
                   className="object-cover"
                 />
               </div>
