@@ -3,14 +3,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div
-      className="p-0 min-h-[100svh]"
-      style={{
-        backgroundImage: "url('https://axt.s3.amazonaws.com/donchava/bg.jpg')",
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+    <div className="p-0 min-h-[100svh] bg-[#fafafa]">
       <Head>
         <title>Taquería Don Chava - Tacos Tradicionales de pastor, arrachera y rib eye en Playa del Carmen</title>
         <meta name="description" content="Taquería Don Chava — sucursales en Playa del Carmen" />
@@ -19,10 +12,10 @@ export default function Home() {
 
       <main className="flex min-h-[100svh] flex-1 flex-col items-center justify-center bg-black/50 px-0 py-16">
         <Image
-          src="https://axt.s3.amazonaws.com/donchava/logo.png"
+          src="/logo-donchava.png"
           alt="Don Chava"
-          height={40}
-          width={102}
+          height={200}
+          width={200}
         />
 
         <p className="my-4 text-center text-2xl leading-relaxed text-white">
