@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="https://axt.s3.amazonaws.com/donchava/favicon.ico" />
       </Head>
 
-      <main className="flex min-h-[100svh] flex-1 flex-col items-center justify-center bg-black/50 px-0 py-16">
+      <main className="flex min-h-[100svh] flex-1 flex-col items-center justify-center px-0 py-16">
         <Image
           src="/logo-donchava.png"
           alt="Don Chava"
