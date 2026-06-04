@@ -11,6 +11,13 @@ export default function Home() {
         <title>Taquería Don Chava - Tacos Tradicionales de pastor, arrachera y rib eye en Playa del Carmen</title>
         <meta name="description" content="Taquería Don Chava — sucursales en Playa del Carmen" />
         <link rel="icon" href="https://axt.s3.amazonaws.com/donchava/favicon.ico" />
+        {/* Preload LCP image for faster discovery */}
+        <link
+          rel="preload"
+          as="image"
+          href="/logo-donchava.png"
+          fetchPriority="high"
+        />
         <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
       </Head>
 
