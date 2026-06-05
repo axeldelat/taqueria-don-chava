@@ -6,7 +6,9 @@
   --color-card-border: #CE122E;
 }
 
-/* Override GLF embedder script styles on .glf-button */
+/* Override GLF embedder script styles on .glf-button - using higher specificity */
+span.glf-button,
+.glf-button[data-glf-cuid],
 .glf-button {
   display: block !important;
   width: 100% !important;
@@ -14,6 +16,7 @@
   cursor: pointer !important;
   border-radius: 9999px !important;
   border: 2px solid #CE122E !important;
+  background: #CE122E !important;
   background-color: #CE122E !important;
   padding: 0.5rem 1rem !important;
   text-align: center !important;
@@ -26,9 +29,13 @@
   font-family: inherit !important;
   line-height: 1.5 !important;
   text-decoration: none !important;
+  opacity: 1 !important;
 }
 
+span.glf-button:hover,
+.glf-button[data-glf-cuid]:hover,
 .glf-button:hover {
+  background: #ffffff !important;
   background-color: #ffffff !important;
   color: #CE122E !important;
 }
