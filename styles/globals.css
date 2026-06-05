@@ -6,7 +6,9 @@
   --color-card-border: #CE122E;
 }
 
-/* Override GLF embedder script styles on .glf-button */
+/* Override GLF embedder script styles on .glf-button - using higher specificity */
+span.glf-button,
+.glf-button[data-glf-cuid],
 .glf-button {
   display: block !important;
   width: 100% !important;
@@ -14,23 +16,38 @@
   cursor: pointer !important;
   border-radius: 9999px !important;
   border: 2px solid #CE122E !important;
-  background-color: transparent !important;
+  background: #CE122E !important;
+  background-color: #CE122E !important;
   padding: 0.5rem 1rem !important;
   text-align: center !important;
   font-size: 0.75rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
-  color: #CE122E !important;
+  color: #ffffff !important;
   transition: background-color 0.15s ease, color 0.15s ease !important;
   font-family: inherit !important;
   line-height: 1.5 !important;
   text-decoration: none !important;
+  opacity: 1 !important;
 }
 
-.glf-button:hover {
-  background-color: #CE122E !important;
-  color: #ffffff !important;
+span.glf-button:hover,
+.glf-button[data-glf-cuid]:hover,
+.glf-button:hover,
+span.glf-button:hover *,
+.glf-button:hover * {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #CE122E !important;
+  border-color: #CE122E !important;
+}
+
+/* Ensure any nested elements also get the correct colors */
+.glf-button *,
+span.glf-button * {
+  color: inherit !important;
+  background: transparent !important;
 }
 
 .glf-button:active {
