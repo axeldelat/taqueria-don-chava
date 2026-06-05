@@ -14,14 +14,14 @@
   cursor: pointer !important;
   border-radius: 9999px !important;
   border: 2px solid #CE122E !important;
-  background-color: transparent !important;
+  background-color: #CE122E !important;
   padding: 0.5rem 1rem !important;
   text-align: center !important;
   font-size: 0.75rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
-  color: #CE122E !important;
+  color: #ffffff !important;
   transition: background-color 0.15s ease, color 0.15s ease !important;
   font-family: inherit !important;
   line-height: 1.5 !important;
@@ -29,8 +29,8 @@
 }
 
 .glf-button:hover {
-  background-color: #CE122E !important;
-  color: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #CE122E !important;
 }
 
 .glf-button:active {
