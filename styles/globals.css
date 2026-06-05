@@ -34,10 +34,20 @@ span.glf-button,
 
 span.glf-button:hover,
 .glf-button[data-glf-cuid]:hover,
-.glf-button:hover {
+.glf-button:hover,
+span.glf-button:hover *,
+.glf-button:hover * {
   background: #ffffff !important;
   background-color: #ffffff !important;
   color: #CE122E !important;
+  border-color: #CE122E !important;
+}
+
+/* Ensure any nested elements also get the correct colors */
+.glf-button *,
+span.glf-button * {
+  color: inherit !important;
+  background: transparent !important;
 }
 
 .glf-button:active {
