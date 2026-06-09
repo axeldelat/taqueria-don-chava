@@ -37,7 +37,7 @@ export default function Home() {
           {/* Promo Banner */}
           <div className="mb-6 flex w-full flex-col items-center justify-center gap-4 rounded-lg bg-[#CE122E] px-6 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
             <p className="text-lg font-semibold text-white sm:text-xl">
-              Recibe una cortesía sorpresa en tu proxima visita
+              Recibe una cortesía sorpresa en tu próxima visita
             </p>
             <button
               onClick={() => setShowPromo(true)}

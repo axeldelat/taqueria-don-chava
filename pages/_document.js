@@ -4,6 +4,9 @@ export default function Document() {
   return (
     <Html lang="es">
       <Head>
+        {/* Facebook Domain Verification */}
+        <meta name="facebook-domain-verification" content="9wubgwmt92llyn2sumzusx87pqjc8a" />
+
         {/* Open Graph / Social Sharing */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Taquería Don Chava" />
