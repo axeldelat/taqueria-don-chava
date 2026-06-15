@@ -2,6 +2,25 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 
+// Sends a conversion event to GTM (dataLayer), GA4 (gtag) and Meta (fbq)
+function trackEvent(eventName) {
+  if (typeof window === 'undefined') return
+
+  // Google Tag Manager dataLayer
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({ event: eventName })
+
+  // GA4 direct (in case gtag is present)
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', eventName)
+  }
+
+  // Meta Pixel direct (in case fbq is present)
+  if (typeof window.fbq === 'function') {
+    window.fbq('trackCustom', eventName)
+  }
+}
+
 export default function Home() {
   const [showPromo, setShowPromo] = useState(false)
 
@@ -40,7 +59,10 @@ export default function Home() {
               Recibe una cortesía sorpresa en tu próxima visita
             </p>
             <button
-              onClick={() => setShowPromo(true)}
+              onClick={() => {
+                trackEvent('getPromo')
+                setShowPromo(true)
+              }}
               className="shrink-0 cursor-pointer rounded-full border-2 border-white bg-transparent px-6 py-2 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E] active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Obtener Promo
@@ -74,13 +96,14 @@ export default function Home() {
                     className="glf-button"
                     data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211"
                     data-glf-ruid="e0f208ff-19d2-4e53-bb58-7688eeb8e79b"
+                    onClick={() => trackEvent('orderOnline28')}
                   >
                     Ordenar en Línea
                   </span>
                 </div>
 
                 {/* Secondary CTA — Como Llegar */}
-                <a href="https://goo.gl/maps/mGrrjE38A9BR8otB7" target="_blank" rel="noopener noreferrer" className="mt-2 block w-full">
+                <a href="https://goo.gl/maps/mGrrjE38A9BR8otB7" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('map28')} className="mt-2 block w-full">
                   <button className="w-full cursor-pointer rounded-full border border-[#CE122E]/40 bg-transparent px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#CE122E] transition-colors hover:border-[#CE122E] hover:bg-[#CE122E]/5 active:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#CE122E] focus-visible:outline-offset-2">
                     Cómo Llegar
                   </button>
@@ -113,13 +136,14 @@ export default function Home() {
                     className="glf-button"
                     data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211"
                     data-glf-ruid="944964cf-3ba2-48aa-96b8-03488b380f74"
+                    onClick={() => trackEvent('orderOnlineCtm')}
                   >
                     Ordenar en Línea
                   </span>
                 </div>
 
                 {/* Secondary CTA — Como Llegar */}
-                <a href="https://goo.gl/maps/zVaBLqMwWZbaJjHt8" target="_blank" rel="noopener noreferrer" className="mt-2 block w-full">
+                <a href="https://goo.gl/maps/zVaBLqMwWZbaJjHt8" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('mapCtm')} className="mt-2 block w-full">
                   <button className="w-full cursor-pointer rounded-full border border-[#CE122E]/40 bg-transparent px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#CE122E] transition-colors hover:border-[#CE122E] hover:bg-[#CE122E]/5 active:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#CE122E] focus-visible:outline-offset-2">
                     Cómo Llegar
                   </button>
@@ -158,6 +182,7 @@ export default function Home() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
+        onClick={() => trackEvent('whatsappChat')}
         className="fixed bottom-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform duration-200 hover:scale-110 hover:shadow-xl active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#25D366] focus-visible:outline-offset-2"
       >
         {/* WhatsApp SVG icon */}
