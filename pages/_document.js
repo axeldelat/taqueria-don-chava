@@ -34,6 +34,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* End Google Tag Manager */}
+
+        {/* Google Analytics 4 (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-G9YX8E559E"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-G9YX8E559E');`,
+          }}
+        />
+        {/* End Google Analytics 4 */}
+
+        {/* Meta Pixel */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '447520543265147');
+fbq('track', 'PageView');`,
+          }}
+        />
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=447520543265147&ev=PageView&noscript=1" />`,
+          }}
+        />
+        {/* End Meta Pixel */}
       </Head>
       <body>
         {/* Google Tag Manager (noscript) */}
