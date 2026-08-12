@@ -37,7 +37,6 @@ export default function Home() {
           href="/logo-donchava.png"
           fetchPriority="high"
         />
-        <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
       </Head>
 
       <main className="flex min-h-[100svh] flex-1 flex-col items-center justify-center px-0 py-0">
@@ -84,23 +83,24 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-col justify-center p-4">
-                <h2 className="mb-2 text-xl font-semibold text-[#CE122E]">{'Suc. 28 de julio \u2192'}</h2>
+                <h2 className="mb-2 text-xl font-semibold text-[#CE122E]">{'Suc. Mundo Habitatt \u2192'}</h2>
                 <p className="mt-1 text-xs leading-relaxed text-gray-600">
                   <span className="font-semibold text-[#CE122E]">Lun – Sáb:</span> 4:30 p.m.–12 a.m.<br />
                   <span className="font-semibold text-gray-400">Domingo:</span> <span className="italic text-gray-400">Cerrado</span>
                 </p>
 
                 {/* Primary CTA — Ordenar en Línea */}
-                <div className="mt-4 w-full">
-                  <span
-                    className="glf-button"
-                    data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211"
-                    data-glf-ruid="e0f208ff-19d2-4e53-bb58-7688eeb8e79b"
-                    onClick={() => trackEvent('orderOnline28')}
-                  >
+                <a
+                  href="https://taqueria-don-chava.geniusresto.menu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('orderOnline28')}
+                  className="mt-4 block w-full"
+                >
+                  <button className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-[#CE122E] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E] active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#CE122E] focus-visible:outline-offset-2">
                     Ordenar en Línea
-                  </span>
-                </div>
+                  </button>
+                </a>
 
                 {/* Secondary CTA — Como Llegar */}
                 <a href="https://goo.gl/maps/mGrrjE38A9BR8otB7" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('map28')} className="mt-2 block w-full">
@@ -131,16 +131,17 @@ export default function Home() {
                 </p>
 
                 {/* Primary CTA — Ordenar en Línea */}
-                <div className="mt-4 w-full">
-                  <span
-                    className="glf-button"
-                    data-glf-cuid="723f63c2-9b29-4153-81d9-6d5d99941211"
-                    data-glf-ruid="944964cf-3ba2-48aa-96b8-03488b380f74"
-                    onClick={() => trackEvent('orderOnlineCtm')}
-                  >
+                <a
+                  href="https://taqueria-don-chava-suc-ctm.geniusresto.menu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('orderOnlineCtm')}
+                  className="mt-4 block w-full"
+                >
+                  <button className="w-full cursor-pointer rounded-full border-2 border-[#CE122E] bg-[#CE122E] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#CE122E] active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#CE122E] focus-visible:outline-offset-2">
                     Ordenar en Línea
-                  </span>
-                </div>
+                  </button>
+                </a>
 
                 {/* Secondary CTA — Como Llegar */}
                 <a href="https://goo.gl/maps/zVaBLqMwWZbaJjHt8" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('mapCtm')} className="mt-2 block w-full">
