@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
+
+const PROMO_CODE = 'PRIMERA-COMPRA'
 
 // Sends a conversion event to GTM (dataLayer), GA4 (gtag) and Meta (fbq)
 function trackEvent(eventName) {
@@ -20,20 +23,103 @@ function trackEvent(eventName) {
   }
 }
 
+// Legacy copy path: some mobile browsers expose the Clipboard API but reject
+// writeText (restricted permissions, non-secure context), so this stays as a
+// fallback for both the "missing" and the "present but rejected" cases.
+function legacyCopy(text) {
+  const field = document.createElement('textarea')
+  field.value = text
+  field.setAttribute('readonly', '')
+  field.style.position = 'fixed'
+  field.style.opacity = '0'
+  document.body.appendChild(field)
+  field.select()
+  const ok = document.execCommand('copy')
+  document.body.removeChild(field)
+  if (!ok) throw new Error('copy command rejected')
+}
+
+async function copyToClipboard(text) {
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text)
+      return
+    } catch {
+      // Fall through to the legacy path below
+    }
+  }
+  legacyCopy(text)
+}
+
+function PromoCta() {
+  const [copied, setCopied] = useState(false)
+  const resetTimer = useRef(null)
+
+  useEffect(() => () => clearTimeout(resetTimer.current), [])
+
+  async function handleCopy() {
+    try {
+      await copyToClipboard(PROMO_CODE)
+      setCopied(true)
+      trackEvent('copyPromoCode')
+      clearTimeout(resetTimer.current)
+      resetTimer.current = setTimeout(() => setCopied(false), 2200)
+    } catch {
+      // Clipboard blocked — the code stays on screen and selectable
+    }
+  }
+
+  return (
+    <div className="w-full max-w-[900px] px-4 mb-6 sm:mb-8">
+      <div className="flex flex-col gap-5 rounded-xl bg-[#CE122E] p-5 text-left text-white shadow-md sm:flex-row sm:items-center sm:gap-7 sm:p-6">
+
+        <div className="flex-1">
+          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/70">
+            Nuevo sistema de pedidos
+          </p>
+          <h2 className="mt-2 text-lg font-bold leading-snug sm:text-xl">
+            Haz tu primer pedido a domicilio o pickup y empieza a ganar puntos
+          </h2>
+          <p className="mt-2 text-xs leading-relaxed text-white/85">
+            Ya puedes seguir tu pedido en tiempo real, usar códigos de promoción y acumular puntos en nuestro sistema de lealtad.
+          </p>
+        </div>
+
+        {/* Cupón */}
+        <div className="w-full shrink-0 rounded-lg border-2 border-dashed border-white/45 bg-white/10 p-4 text-center sm:w-[248px]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/80">
+            10% de descuento
+          </p>
+          <p className="mt-1.5 select-all font-mono text-base font-extrabold tracking-[0.08em] sm:text-lg">
+            {PROMO_CODE}
+          </p>
+          <button
+            type="button"
+            onClick={handleCopy}
+            aria-label={`Copiar código de descuento ${PROMO_CODE}`}
+            className="mt-3 w-full cursor-pointer rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#CE122E] transition-colors hover:bg-white/90 active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+          >
+            <span aria-live="polite">{copied ? '¡Copiado!' : 'Copiar código'}</span>
+          </button>
+          <p className="mt-2 text-[10px] leading-tight text-white/70">
+            Válido en tu primer pedido
+          </p>
+        </div>
+
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <div className="p-0 min-h-[100svh] bg-[#fafafa]">
       <Head>
         <title>Taquería Don Chava - Tacos Tradicionales de pastor, arrachera y rib eye en Playa del Carmen</title>
         <meta name="description" content="Taquería Don Chava — sucursales en Playa del Carmen" />
-        <link rel="icon" href="https://axt.s3.amazonaws.com/donchava/favicon.ico" />
-        {/* Preload LCP image for faster discovery */}
-        <link
-          rel="preload"
-          as="image"
-          href="/logo-donchava.png"
-          fetchPriority="high"
-        />
+        {/* The logo <Image> below carries `priority`, which emits its own
+            preload for the optimized asset — a manual one would fetch the
+            raw PNG that next/image never serves. */}
       </Head>
 
       <main className="flex min-h-[100svh] flex-1 flex-col items-center justify-center px-0 py-0">
@@ -46,6 +132,8 @@ export default function Home() {
           quality={85}
         />
 
+        <PromoCta />
+
         {/* Cards aligned wrapper */}
         <div className="w-full max-w-[900px] px-4 mb-8 sm:mb-12">
 
@@ -55,8 +143,8 @@ export default function Home() {
             <div className="flex flex-1 min-w-[280px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg text-left text-[#CE122E]">
               <div className="relative w-[160px] shrink-0">
                 <Image
-                  src="/28dejulio.png"
-                  alt="Sucursal 28 de julio"
+                  src="/28dejulio.jpg"
+                  alt="Sucursal Mundo Habitatt"
                   fill
                   sizes="160px"
                   quality={75}
@@ -96,7 +184,7 @@ export default function Home() {
             <div className="flex flex-1 min-w-[280px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg text-left text-[#CE122E]">
               <div className="relative w-[160px] shrink-0">
                 <Image
-                  src="/ctm.png"
+                  src="/ctm.jpg"
                   alt="Sucursal CTM"
                   fill
                   sizes="160px"
@@ -113,7 +201,7 @@ export default function Home() {
 
                 {/* Primary CTA — Ordenar en Línea */}
                 <a
-                  href="https://taqueria-don-chava-suc-ctm.ola.click/products"
+                  href="https://taqueria-don-chava-suc-ctm.geniusresto.menu/products"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent('orderOnlineCtm')}
