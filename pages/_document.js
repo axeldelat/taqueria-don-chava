@@ -30,32 +30,9 @@ export default function Document() {
         <meta name="twitter:description" content="Una vida taqueando." />
         <meta name="twitter:image" content="https://www.taqueriadonchava.mx/og-image.jpg" />
 
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TQGT459M');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
-
-        {/* Google Analytics 4 (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-G9YX8E559E"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-G9YX8E559E');`,
-          }}
-        />
-        {/* End Google Analytics 4 */}
+        {/* GA4 lives in _app.js via <GoogleAnalytics>. The GTM container was
+            removed: it held a single tag for this same measurement ID, so it
+            shipped 344 KB to duplicate what gtag already does. */}
 
         {/* Meta Pixel */}
         <script
@@ -68,28 +45,18 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '447520543265147');
+fbq('init', '584873826523126');
 fbq('track', 'PageView');`,
           }}
         />
         <noscript
           dangerouslySetInnerHTML={{
-            __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=447520543265147&ev=PageView&noscript=1" />`,
+            __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=584873826523126&ev=PageView&noscript=1" />`,
           }}
         />
         {/* End Meta Pixel */}
       </Head>
       <body>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-TQGT459M"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <Main />
         <NextScript />
       </body>

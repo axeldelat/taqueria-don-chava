@@ -1,21 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
+import { sendGAEvent } from '@next/third-parties/google'
 
 const PROMO_CODE = 'PRIMERA-COMPRA'
 
-// Sends a conversion event to GTM (dataLayer), GA4 (gtag) and Meta (fbq)
+// Sends a conversion event to GA4 and Meta (fbq)
 function trackEvent(eventName) {
   if (typeof window === 'undefined') return
 
-  // Google Tag Manager dataLayer
-  window.dataLayer = window.dataLayer || []
-  window.dataLayer.push({ event: eventName })
-
-  // GA4 direct (in case gtag is present)
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', eventName)
-  }
+  // Queues onto the dataLayer, so it survives clicks that land before
+  // gtag.js has finished loading
+  sendGAEvent('event', eventName)
 
   // Meta Pixel direct (in case fbq is present)
   if (typeof window.fbq === 'function') {
@@ -74,10 +70,7 @@ function PromoCta() {
       <div className="flex flex-col gap-5 rounded-xl bg-[#CE122E] p-5 text-left text-white shadow-md sm:flex-row sm:items-center sm:gap-7 sm:p-6">
 
         <div className="flex-1">
-          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/70">
-            Nuevo sistema de pedidos
-          </p>
-          <h2 className="mt-2 text-lg font-bold leading-snug sm:text-xl">
+          <h2 className="text-lg font-bold leading-snug sm:text-xl">
             Haz tu primer pedido a domicilio o pickup y empieza a ganar puntos
           </h2>
           <p className="mt-2 text-xs leading-relaxed text-white/85">
