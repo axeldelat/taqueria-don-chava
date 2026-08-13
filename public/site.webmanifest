@@ -1,0 +1,14 @@
+{
+  "name": "Taquería Don Chava",
+  "short_name": "Don Chava",
+  "description": "Taquería Don Chava — sucursales en Playa del Carmen",
+  "lang": "es-MX",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#CE122E",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

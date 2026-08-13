@@ -4,6 +4,12 @@ export default function Document() {
   return (
     <Html lang="es">
       <Head>
+        {/* Favicons / App Icons */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#CE122E" />
+
         {/* Facebook Domain Verification */}
         <meta name="facebook-domain-verification" content="9wubgwmt92llyn2sumzusx87pqjc8a" />
 
@@ -12,16 +18,17 @@ export default function Document() {
         <meta property="og:site_name" content="Taquería Don Chava" />
         <meta property="og:title" content="Taquería Don Chava" />
         <meta property="og:description" content="Una vida taqueando." />
-        <meta property="og:image" content="https://taqueria-don-chava.vercel.app/og-image.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://www.taqueriadonchava.mx/" />
+        <meta property="og:image" content="https://www.taqueriadonchava.mx/og-image.jpg" />
+        <meta property="og:image:width" content="1440" />
+        <meta property="og:image:height" content="958" />
         <meta property="og:locale" content="es_MX" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Taquería Don Chava" />
         <meta name="twitter:description" content="Una vida taqueando." />
-        <meta name="twitter:image" content="https://taqueria-don-chava.vercel.app/og-image.jpg" />
+        <meta name="twitter:image" content="https://www.taqueriadonchava.mx/og-image.jpg" />
 
         {/* Google Tag Manager */}
         <script
