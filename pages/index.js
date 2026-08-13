@@ -113,7 +113,7 @@ export default function Home() {
 
                 {/* Primary CTA — Ordenar en Línea */}
                 <a
-                  href="https://taqueria-don-chava-suc-ctm.geniusresto.menu/products"
+                  href="https://taqueria-don-chava-suc-ctm.ola.click/products"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent('orderOnlineCtm')}
