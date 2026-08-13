@@ -1,5 +1,0 @@
-# sharp powers next/image optimization; unrs-resolver backs the ESLint
-# resolver. Both need their install scripts to fetch native binaries.
-allowBuilds:
-  sharp: true
-  unrs-resolver: true
