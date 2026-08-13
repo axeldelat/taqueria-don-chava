@@ -117,13 +117,9 @@ export default function Home() {
       <Head>
         <title>Taquería Don Chava - Tacos Tradicionales de pastor, arrachera y rib eye en Playa del Carmen</title>
         <meta name="description" content="Taquería Don Chava — sucursales en Playa del Carmen" />
-        {/* Preload LCP image for faster discovery */}
-        <link
-          rel="preload"
-          as="image"
-          href="/logo-donchava.png"
-          fetchPriority="high"
-        />
+        {/* The logo <Image> below carries `priority`, which emits its own
+            preload for the optimized asset — a manual one would fetch the
+            raw PNG that next/image never serves. */}
       </Head>
 
       <main className="flex min-h-[100svh] flex-1 flex-col items-center justify-center px-0 py-0">
@@ -147,8 +143,8 @@ export default function Home() {
             <div className="flex flex-1 min-w-[280px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg text-left text-[#CE122E]">
               <div className="relative w-[160px] shrink-0">
                 <Image
-                  src="/28dejulio.png"
-                  alt="Sucursal 28 de julio"
+                  src="/28dejulio.jpg"
+                  alt="Sucursal Mundo Habitatt"
                   fill
                   sizes="160px"
                   quality={75}
@@ -188,7 +184,7 @@ export default function Home() {
             <div className="flex flex-1 min-w-[280px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg text-left text-[#CE122E]">
               <div className="relative w-[160px] shrink-0">
                 <Image
-                  src="/ctm.png"
+                  src="/ctm.jpg"
                   alt="Sucursal CTM"
                   fill
                   sizes="160px"

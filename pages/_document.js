@@ -20,8 +20,8 @@ export default function Document() {
         <meta property="og:description" content="Una vida taqueando." />
         <meta property="og:url" content="https://www.taqueriadonchava.mx/" />
         <meta property="og:image" content="https://www.taqueriadonchava.mx/og-image.jpg" />
-        <meta property="og:image:width" content="1440" />
-        <meta property="og:image:height" content="958" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="es_MX" />
 
         {/* Twitter Card */}
