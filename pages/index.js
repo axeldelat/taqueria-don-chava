@@ -1,9 +1,38 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { sendGAEvent } from '@next/third-parties/google'
 
-const PROMO_CODE = 'PRIMERA-COMPRA'
+// Shown in this order. `expiresAt` is the first instant the code stops
+// working (Cancún time, UTC-5); past it the card hides itself.
+const PROMOS = [
+  {
+    code: 'PASTOR-FANATICO',
+    name: 'Adictos al pastor',
+    discount: '$70 de descuento',
+    terms: 'En kilo de pastor y medio kilo de asada · Un uso por cliente · Hasta el 31 oct',
+    event: 'copyPromoPastorFanatico',
+    expiresAt: '2026-11-01T00:00:00-05:00',
+  },
+  {
+    code: 'PRIMERA-COMPRA',
+    name: 'Primera compra',
+    discount: '10% de descuento',
+    terms: 'Solo en tu primera compra · Compra mínima de $500',
+    event: 'copyPromoPrimeraCompra',
+  },
+]
+
+const ALL_CODES = PROMOS.map((promo) => promo.code).join(',')
+
+function isActive(promo, now) {
+  return !promo.expiresAt || now < new Date(promo.expiresAt)
+}
+
+// Expiry has no change event to listen to; it is re-read on each render
+function noopSubscribe() {
+  return () => {}
+}
 
 // Sends a conversion event to GA4 and Meta (fbq)
 function trackEvent(eventName) {
@@ -47,7 +76,7 @@ async function copyToClipboard(text) {
   legacyCopy(text)
 }
 
-function PromoCta() {
+function PromoCoupon({ promo }) {
   const [copied, setCopied] = useState(false)
   const resetTimer = useRef(null)
 
@@ -55,9 +84,9 @@ function PromoCta() {
 
   async function handleCopy() {
     try {
-      await copyToClipboard(PROMO_CODE)
+      await copyToClipboard(promo.code)
       setCopied(true)
-      trackEvent('copyPromoCode')
+      trackEvent(promo.event)
       clearTimeout(resetTimer.current)
       resetTimer.current = setTimeout(() => setCopied(false), 2200)
     } catch {
@@ -66,37 +95,56 @@ function PromoCta() {
   }
 
   return (
+    <div className="flex flex-col rounded-lg border-2 border-dashed border-white/45 bg-white/10 p-4 text-center">
+      <p className="text-sm font-bold leading-tight">{promo.name}</p>
+      <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-white/80">
+        {promo.discount}
+      </p>
+      <p className="mt-1.5 select-all font-mono text-base font-extrabold tracking-[0.08em] sm:text-lg">
+        {promo.code}
+      </p>
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={`Copiar código de descuento ${promo.code}`}
+        className="mt-3 w-full cursor-pointer rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#CE122E] transition-colors hover:bg-white/90 active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+      >
+        <span aria-live="polite">{copied ? '¡Copiado!' : 'Copiar código'}</span>
+      </button>
+      <p className="mt-2 text-[10px] leading-tight text-white/70">
+        {promo.terms}
+      </p>
+    </div>
+  )
+}
+
+function PromoCta() {
+  // The page is statically built, so expiry is checked in the browser; the
+  // prerendered HTML (server snapshot) lists every promo.
+  const activeCodes = useSyncExternalStore(
+    noopSubscribe,
+    () => PROMOS.filter((promo) => isActive(promo, new Date())).map((p) => p.code).join(','),
+    () => ALL_CODES,
+  )
+  const promos = PROMOS.filter((promo) => activeCodes.split(',').includes(promo.code))
+
+  if (promos.length === 0) return null
+
+  return (
     <div className="w-full max-w-[900px] px-4 mb-6 sm:mb-8">
-      <div className="flex flex-col gap-5 rounded-xl bg-[#CE122E] p-5 text-left text-white shadow-md sm:flex-row sm:items-center sm:gap-7 sm:p-6">
+      <div className="rounded-xl bg-[#CE122E] p-5 text-left text-white shadow-md sm:p-6">
 
-        <div className="flex-1">
-          <h2 className="text-lg font-bold leading-snug sm:text-xl">
-            Haz tu primer pedido a domicilio o pickup y empieza a ganar puntos
-          </h2>
-          <p className="mt-2 text-xs leading-relaxed text-white/85">
-            Ya puedes seguir tu pedido en tiempo real, usar códigos de promoción y acumular puntos en nuestro sistema de lealtad.
-          </p>
-        </div>
+        <h2 className="text-lg font-bold leading-snug sm:text-xl">
+          Pide a domicilio o pickup, ahorra con nuestros cupones y gana puntos
+        </h2>
+        <p className="mt-2 text-xs leading-relaxed text-white/85">
+          Ya puedes seguir tu pedido en tiempo real, usar códigos de promoción y acumular puntos en nuestro sistema de lealtad.
+        </p>
 
-        {/* Cupón */}
-        <div className="w-full shrink-0 rounded-lg border-2 border-dashed border-white/45 bg-white/10 p-4 text-center sm:w-[248px]">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/80">
-            10% de descuento
-          </p>
-          <p className="mt-1.5 select-all font-mono text-base font-extrabold tracking-[0.08em] sm:text-lg">
-            {PROMO_CODE}
-          </p>
-          <button
-            type="button"
-            onClick={handleCopy}
-            aria-label={`Copiar código de descuento ${PROMO_CODE}`}
-            className="mt-3 w-full cursor-pointer rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#CE122E] transition-colors hover:bg-white/90 active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
-          >
-            <span aria-live="polite">{copied ? '¡Copiado!' : 'Copiar código'}</span>
-          </button>
-          <p className="mt-2 text-[10px] leading-tight text-white/70">
-            Válido en tu primer pedido
-          </p>
+        <div className={`mt-5 grid gap-4 ${promos.length > 1 ? 'sm:grid-cols-2' : 'sm:max-w-[320px]'}`}>
+          {promos.map((promo) => (
+            <PromoCoupon key={promo.code} promo={promo} />
+          ))}
         </div>
 
       </div>
